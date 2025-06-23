@@ -1,10 +1,35 @@
+@font-face {
+  font-family: "Roboto";
+  src: url(/assets/fonts/Roboto.ttf);
+}
+@font-face {
+  font-family: "Forum";
+  src: url(/assets/fonts/Forum.ttf);
+}
+
 *,
 *:before,
 *:after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 ul{
   list-style: none;
+}
+
+
+.container {
+  width: 1440px;
+  padding: 75px, 0px;
+  margin: auto;
+  min-height: 100px;
+
+  /* border: 1px solid red;  */
+}
+.dark-section {
+  background-color: #030303;
+}
+.video-section {
+  padding: 90px, 0px, 75px;
 }
