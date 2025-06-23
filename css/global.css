@@ -40,7 +40,7 @@ a {
   justify-content: space-between;
   align-items: center;
 }
-.header-height {
+header .container {
   height: 150px;
 }
 .header-logo-wrapper {
