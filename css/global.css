@@ -1,10 +1,10 @@
 @font-face {
   font-family: "Roboto";
-  src: url(/assets/fonts/Roboto.ttf);
+  src: url(../assets/fonts/Roboto.ttf);
 }
 @font-face {
   font-family: "Forum";
-  src: url(/assets/fonts/Forum.ttf);
+  src: url(../assets/fonts/Forum.ttf);
 }
 
 html {
@@ -52,7 +52,7 @@ header .container {
   transform: translate(0px, -4px);
 
   background-color: #ffffff;
-  mask-image: url(/assets/svg/logo.svg);
+  mask-image: url(../assets/svg/logo.svg);
   mask-size: cover;
 }
 .title {
