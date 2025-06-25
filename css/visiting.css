@@ -1,0 +1,52 @@
+#visiting .container {
+    padding: 75px 0px;
+}
+
+#visiting .virtual-tour {
+    flex-wrap: wrap;
+}
+
+#visiting .virtual-tour a {
+    display: block;
+    flex: 0 0 440px;
+    border: 1px solid red;
+}
+
+@media (max-width: 1480px) {
+    #visiting .virtual-tour a {
+        flex: 0 0 calc(26.44vw + 59.23px); /*440-330 until w1024*/
+    }
+}
+
+@media (max-width: 1360px) {
+    #visiting .virtual-tour {
+        justify-content: space-around;
+    }
+    #visiting .virtual-tour a {
+        margin: 0px 70px;
+    }
+}
+
+@media (max-width: 1024px) {
+    #visiting .virtual-tour {
+    justify-content: space-around;
+}
+    #visiting .virtual-tour a {
+        flex: 0 0 calc(19.53vw + 130px); /*330-280 until w768*/
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    #visiting .virtual-tour {
+        display: block;
+        width: 280px;
+        margin: auto;
+    }
+}
+
+@media (max-width: 420px) {
+    #visiting .virtual-tour {
+        width: calc(46.24vw + 85.81px); /*280-194 until w234(logo + paddings)*/
+    }
+}

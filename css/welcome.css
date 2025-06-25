@@ -12,6 +12,9 @@
     left: 0;
     width: 100%;
 }
+#welcome .welcome__wrapper h1 {
+    color: var(--white);
+}
 #welcome .welcome__wrapper p {
     padding-top: 25px;
     font-size: calc(100% + 6px);
@@ -23,7 +26,7 @@
     width: 360px;
     height: 75px;
     margin-top: 75px;
-    background-color: #710707;
+    background-color: var(--dark-red);
     border: 0;
     border-radius: 10px;
 }
@@ -40,29 +43,29 @@
 
 #welcome .welcome__wrapper a:link,
 #welcome .welcome__wrapper a:visited {
-    color: #ffffff;
-    background-color: #710707;
+    color: var(--white);
+    background-color: var(--dark-red);
 }
 #welcome .welcome__wrapper a:hover,
 #welcome .welcome__wrapper a:active {
-    color: #ffffff;
-    background-color: #9d8665;
+    color: var(--white);
+    background-color: var(--font-gold);
 }
 
 @media (max-width: 1480px) {
     #welcome .welcome__wrapper {
-        padding-top: calc(21.93vw - 174.56px); /* 150-50 till 1024 */
+        padding-top: calc(24.04vw - 196.15px); /*150-50 until w1024*/
     }
     #welcome .welcome__wrapper a {
-        width: calc(13.16vw + 165.26px);     /*360-300 until w1024*/
-        height: calc(3.29vw + 26.32px);      /*75-60 until w1024*/
-        line-height: calc(3.29vw + 26.32px); /*75-60 until w1024*/
+        width: calc(14.42vw + 152.31px);     /*360-300 until w1024*/
+        height: calc(3.61vw + 23.08px);      /*75-60 until w1024*/
+        line-height: calc(3.61vw + 23.08px); /*75-60 until w1024*/
     }
 }
 
 @media (max-width: 1024px) {
     #welcome .welcome__wrapper {
-        padding-top: calc(19.53vw - 150px); /* 50-0 till 768 */
+        padding-top: calc(19.53vw - 150px); /* 50-0 util w768 */
     }
 }
 

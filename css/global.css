@@ -6,7 +6,13 @@
   font-family: "Forum";
   src: url(../assets/fonts/Forum.ttf);
 }
-
+:root {
+  --dark-red: #710707;
+  --font-gold: #9d8665;
+  --font-gold-darker: #7e6c51;
+  --bg-dark: #030303;
+  --white: #ffffff;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -29,7 +35,7 @@ a {
 }
 a:link,
 a:visited {
-  color: #000000;
+  color: var(--bg-dark);
 }
 
 h1,
@@ -37,7 +43,16 @@ h2 {
   font-family: "Forum", serif;
   font-size: 80px;
   font-weight: 400;
-  line-height: 90px ;
+  line-height: 90px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--font-gold);
+}
+h3 {
+  font-family: "Forum", serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 100%;
   letter-spacing: 5px;
   text-transform: uppercase;
 }
@@ -47,8 +62,8 @@ h2 {
   margin: 0 auto;
 }
 .body--dark {
-  background-color: #030303;
-  color: #ffffff;
+  background-color: var(--bg-dark);
+  color: var(--white);
 }
 .container--flex {
   display: flex;
@@ -85,33 +100,36 @@ header .header-logo__wrapper {
 }
 
 .header-logo__wrapper:hover .logo {
-  background-color: #9d8665;
+  background-color: var(--font-gold);
   transition: 0.3s;
 }
 
 .body--dark a:link,
 .body--dark a:visited {
-  color: #ffffff;
+  color: var(--white);
 }
 .container a:hover {
-  color: #9d8665;
+  color: var(--font-gold);
   transition: 0.3s;
 }
 .container a:active {
-  color: #7f6b4f
+  color: var(--font-gold-darker);
 }
 
 
 @media (max-width: 1480px) {
   * {
-    font-size: calc(0.44vw + 15.51px); /* 22-20 until w1024 */
+    font-size: calc(0.48vw + 15.08px); /*22-20 until w1024*/
   }
   .container {
     margin: 0 20px;
   }
   h1,
   h2 {
-    font-size: calc(6.58vw - 17.37px); /* 80-50 until w1024 */
+    font-size: calc(7.21vw - 23.85px); /*80-50 until w1024*/
+  }
+  h3 {
+    font-size: calc(0.96vw + 18.15px); /*32-28 until w1024*/
   }
 }
 
@@ -122,6 +140,9 @@ header .header-logo__wrapper {
   h1,
   h2 {
     font-size: calc(3.91vw + 10px); /*50-40 until w768*/
+  }
+  h3 {
+    font-size: calc(2.34vw + 4px); /*28-22 until w768*/
   }
   header .header-menu {
     display: none; /* for now */
@@ -136,6 +157,9 @@ header .header-logo__wrapper {
   h2 {
     font-size: calc(3.45vw + 13.52px); /*40-28 until w420*/
     line-height: calc(5.75vw + 15.86px); /*60-40 until w420*/
+  }
+  h3 {
+    font-size: calc(1.15vw + 13.17px); /*22-18 until w420*/
   }
 }
 
