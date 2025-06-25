@@ -1,0 +1,87 @@
+#welcome .container {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    padding-bottom: 60px;
+}
+#welcome .welcome__wrapper {
+    position: relative;
+    z-index: 2;
+    margin: 0 -70% 0 0;
+    padding-top: 150px;
+    left: 0;
+    width: 100%;
+}
+#welcome .welcome__wrapper p {
+    padding-top: 25px;
+    font-size: calc(100% + 6px);
+}
+#welcome .welcome__wrapper a {
+    display: block;
+    text-align: center;
+    line-height: 75px;
+    width: 360px;
+    height: 75px;
+    margin-top: 75px;
+    background-color: #710707;
+    border: 0;
+    border-radius: 10px;
+}
+#welcome .welcome__image {
+    position: relative;
+    z-index: 1;
+    width: 70%;
+}
+#welcome .welcome__image img {
+    width: 100%;
+    height: auto;
+    mask-image: linear-gradient(to left,black 65%, transparent);
+}
+
+#welcome .welcome__wrapper a:link,
+#welcome .welcome__wrapper a:visited {
+    color: #ffffff;
+    background-color: #710707;
+}
+#welcome .welcome__wrapper a:hover,
+#welcome .welcome__wrapper a:active {
+    color: #ffffff;
+    background-color: #9d8665;
+}
+
+@media (max-width: 1480px) {
+    #welcome .welcome__wrapper {
+        padding-top: calc(21.93vw - 174.56px); /* 150-50 till 1024 */
+    }
+    #welcome .welcome__wrapper a {
+        width: calc(13.16vw + 165.26px);     /*360-300 until w1024*/
+        height: calc(3.29vw + 26.32px);      /*75-60 until w1024*/
+        line-height: calc(3.29vw + 26.32px); /*75-60 until w1024*/
+    }
+}
+
+@media (max-width: 1024px) {
+    #welcome .welcome__wrapper {
+        padding-top: calc(19.53vw - 150px); /* 50-0 till 768 */
+    }
+}
+
+@media (max-width: 768px) {
+    #welcome .container {
+        display: block;
+    }
+    #welcome .welcome__wrapper {
+        padding-top: 0;
+        text-align: center;
+    }
+    #welcome .welcome__wrapper a {
+        display: none;
+    }
+    #welcome .welcome__image {
+        padding-top: 50px;
+        width: 100%;
+    }
+    #welcome .welcome__image img {
+        mask: none;
+    }
+}
