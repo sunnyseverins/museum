@@ -1,8 +1,8 @@
 #welcome .container {
+    position: relative;
     display: flex;
     justify-content: space-between;
     height: 100%;
-    padding-bottom: 60px;
 }
 #welcome .welcome__wrapper {
     position: relative;
@@ -33,9 +33,12 @@
 #welcome .welcome__image {
     position: relative;
     z-index: 1;
-    width: 70%;
+    width: 1000px;
+    height: 750px;
+    margin-bottom: 60px;
 }
 #welcome .welcome__image img {
+    object-fit: contain;
     width: 100%;
     height: auto;
     mask-image: linear-gradient(to left,black 65%, transparent);
@@ -54,18 +57,26 @@
 
 @media (max-width: 1480px) {
     #welcome .welcome__wrapper {
-        padding-top: calc(24.04vw - 196.15px); /*150-50 until w1024*/
+        padding-top: calc(21.93vw - 174.56px); /*150-50 until w1024*/
     }
     #welcome .welcome__wrapper a {
-        width: calc(14.42vw + 152.31px);     /*360-300 until w1024*/
-        height: calc(3.61vw + 23.08px);      /*75-60 until w1024*/
-        line-height: calc(3.61vw + 23.08px); /*75-60 until w1024*/
+        width: calc(13.16vw + 165.26px);   /*360-300 until w1024*/
+        height: calc(3.29vw + 26.32px);      /*75-60 until w1024*/
+        line-height: calc(3.29vw + 26.32px); /*75-60 until w1024*/
+    }
+    #welcome .welcome__image {
+        width: calc(65.79vw + 26.32px); /*1000-700 until w1024*/
+        height: calc(49.34vw + 19.74px); /*750-525 until w1024*/
     }
 }
 
 @media (max-width: 1024px) {
     #welcome .welcome__wrapper {
         padding-top: calc(19.53vw - 150px); /* 50-0 util w768 */
+    }
+    #welcome .welcome__image {
+        width: calc(65.79vw + 26.32px); /*1000-700 until w1024*/
+        height: calc(49.34vw + 19.74px); /*750-525 until w1024*/
     }
 }
 
@@ -83,6 +94,9 @@
     #welcome .welcome__image {
         padding-top: 50px;
         width: 100%;
+        height: auto;
+        margin: 0;
+        padding-bottom: calc(5.75vw + 55.86px); /*100-80 until w420*/
     }
     #welcome .welcome__image img {
         mask: none;
