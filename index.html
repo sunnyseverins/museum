@@ -126,8 +126,10 @@
                     <div class="video-wrapper">
                         <div class="video-player__wrapper">
                             <div class="video-player">
-                                <video src="./assets/video/video0.mp4" poster="./assets/video/poster0.jpg"></video>
-                                <!-- no controls for now, so just an image, here and onwards -->
+                                <div class="video-player__main">
+                                    <video src="./assets/video/video0.mp4" poster="./assets/video/poster0.jpg"></video>
+                                </div>
+                                <!-- no controls for now, so just an image -->
                                 <div class="video-player__action-bar container--flex">
                                       <img src="./assets/svg/play.svg" alt="play button" id="play-button">
                                       <input type="range" id="progress-bar" class="bar" value="0" min="0" max="100" step="1">
@@ -139,16 +141,16 @@
                         </div>
                         <div class="video-link__wrapper container--flex">
                             <div class="video-link"> 
-                                <video src="./assets/video/video3.mp4" poster="./assets/video/poster3.jpg"></video>
+                                <iframe loading="lazy" src="https://www.youtube.com/embed/aWmJ5DgyWPI?si=miGwp-cYaBHRIBqX" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                             </div>
                             <div class="video-link">
-                                <video src="./assets/video/video1.mp4" poster="./assets/video/poster1.jpg"></video>
+                                <iframe loading="lazy" src="https://www.youtube.com/embed/NOhDysLnTvY?si=8cWlbUOmKTv916zT" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                             </div>
                             <div class="video-link">
-                                <video src="./assets/video/video2.mp4" poster="./assets/video/poster2.jpg"></video>
+                                <iframe loading="lazy" src="https://www.youtube.com/embed/2OR0OCr6uRE?si=t-k1em_4MZjB7cEr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                             </div>
                             <div class="video-link">
-                                <video src="./assets/video/video4.mp4" poster="./assets/video/poster4.jpg"></video>
+                                <iframe loading="lazy" src="https://www.youtube.com/embed/Vi5D6FKhRmo?si=KmH7PKDmvGY8JG8k" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                             </div>
                         </div>
                         <div class="video-wrapper__slider-dots"></div>

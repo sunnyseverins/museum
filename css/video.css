@@ -14,25 +14,47 @@
 #video .video-player__wrapper {
     padding-top: 75px;
 }
-#video .video-player {
+#video .video-player__main {
     position: relative;
-    height: 735px; /* 650 + 85 bar height */
+    width: 100%;    
+    height: 650px;
+    /* resize tear fix */
+    padding-bottom: 5px;
+    margin-bottom: -5px;
+    background-color: var(--bg-dark );
+}
+#video .video-player__main::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url(../assets/svg/play-big.svg);
+    width: 220px;
+    height: 220px;
+    background-size: cover;
 }
 #video .video-player video {
+    display: block;
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
 #video .video-player__action-bar {
-    position: absolute;
-    z-index: 1;
+    position: relative;
     padding: 0px 30px;
-    bottom: 0px;
     height: 85px;
     width: 100%;
     color: white;
-    background-color: var(--bg-dark); /* it must be black but fuck it */
-    text-align: center;
+    background-color: var(--bg-dark);
+}
+#video .video-player__action-bar .bar::-webkit-slider-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--white);
+    appearance: none;
 }
 #video .video-player__action-bar #play-button {
     width: 23px;
@@ -60,13 +82,6 @@
     background: linear-gradient(to right, var(--dark-red) 0%, var(--dark-red) 50%, #C4C4C4 50%, #C4C4C4 100%);
     width: 155px;
 }
-#video .video-player__action-bar .bar::-webkit-slider-thumb {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background-color: var(--white);
-    appearance: none;
-}
 #video .video-link__wrapper {
     column-gap: 42px;
     padding: 40px 0;
@@ -76,20 +91,10 @@
     width: 452px;
     height: 254px;
 }
-/* #video .video-link__wrapper .video-link::after {
-    position: absolute;
-    z-index: 1;
-    top: 50%;
-    left: 50%;
-    min-width: 68px;
-    min-height: 48px;
-    align-self: center;
-    background-image: url(../assets/svg/play_youtube.svg);
-} */
 #video .video-link__wrapper .video-link:last-child {
     display: none;
 }
-#video .video-link__wrapper .video-link > video {
+#video .video-link__wrapper .video-link iframe {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -110,8 +115,12 @@
     #video .video-player__wrapper {
         padding-top: calc(7.68vw - 38.6px); /*75-40 until w1024*/
     }
-    #video .video-player {
-        height: calc(50.66vw - 14.74px); /*735-504 until w1024*/
+    #video .video-player__main {
+        height: calc(45.18vw - 18.6px); /*650-444 until w1024*/
+    }
+    #video .video-player__main::after {
+        width: calc(14.91vw - 0.7px); /*220-152 until w1024*/
+        height: calc(14.91vw - 0.7px); /*220-152 until w1024*/
     }
     #video .video-player__action-bar #volume-button {
         width: calc(2.63vw - 0.95px); /*38-26 until w1024*/
@@ -133,7 +142,7 @@
         width: calc(33.33vw - 55.33px);
         height: calc(18.42vw - 18.63px); /*254-170 until w1024*/
     }
-} /* no 1024 - 768 was done to controls due to position change magic */
+}
 @media (max-width: 1024px) {
     #video .container {
         padding: calc(7.81vw - 20px) 0; /*60-40 until w768*/
@@ -144,11 +153,19 @@
     #video .video-header p {
         display: none;
     }
-    #video .video-player {
-        height: calc(46.09vw + 32px); /*504-386 until w768*/
+    #video .video-player__main {
+        height: calc(45.70vw - 24px); /*444-327 until w768*/
+    }
+    #video .video-player__main::after {
+        width: calc(28.13vw - 136px); /*152-80 until w768*/
+        height: calc(28.13vw - 136px); /*152-80 until w768*/
     }
     #video .video-player__action-bar {
         height: calc(2.73vw + 32px); /*60-53 until w768*/
+    }
+    #video .video-player__action-bar .bar::-webkit-slider-thumb {
+        width: 13px;
+        height: 13px;
     }
     #video .video-player__action-bar #play-button {
         height: 30px;
@@ -168,10 +185,14 @@
         height: 5px;
     }
     #video .video-player__action-bar #progress-bar {
-        width: calc(25.00vw + 294px); /*564-486 until w768*/
+        position: absolute;
+        top: 0;
+        width: 100%;
+        transform: translate( -30px, -5px); /* minus padding for some reason */
+        height: 5px; /* for some reason it's height is being overriden */
     }
     #video .video-player__action-bar #volume-bar {
-        display: none;
+        width: calc(25.00vw + 294px); /*564-486 until w768*/
     }
     #video .video-link__wrapper {
         column-gap: calc(8.59vw - 46px); /*42-20 until w768*/
@@ -191,12 +212,17 @@
     #video .video-player__wrapper {
         padding-top: 20px;  
     } 
-    #video .video-player {
-        height: calc(45.98vw + 32.9px); /*386-226 until w420*/
+    #video .video-player__main {
+        height: calc(44.54vw - 15.07px); /*327-172 until w420*/
+    }
+    #video .video-player__main::after {
+        width: calc(8.62vw + 13.79px); /*80-50 until w420*/
+        height: calc(8.62vw + 13.79px); /*80-50 until w420*/
     }
     #video .video-player__action-bar {
         height: calc(0.86vw + 46.38px); /*53-50 until w420*/
         padding: 0 calc(2.87vw + 7.93px); /*30-20 until w420*/
+        margin-top: 5px;
     }
     #video .video-player__action-bar #play-button {
         width: calc(2.59vw + 3.14px); /*23-14 until w420*/
@@ -210,6 +236,9 @@
         height: calc(2.30vw + 8.34px); /*26-18 until w420*/
     }
     #video .video-player__action-bar #progress-bar {
+        transform: translate( calc(-2.87vw - 7.93px), -100%);
+    }
+    #video .video-player__action-bar #volume-bar {
         width: calc(82.18vw - 145.17px); /*486-200 until w420*/
     }
     #video .video-link__wrapper {
@@ -227,7 +256,18 @@
     }
 }
 @media (max-width: 420px) {
+    #video .video-player__action-bar .bar::-webkit-slider-thumb {
+        width: 10px;
+        height: 10px;
+    }
+    #video .video-player__action-bar {
+        margin-top: 4px;
+    }
     #video .video-player__action-bar .bar {
+        height: 4px;
+    }
+    #video .video-player__action-bar #progress-bar {
+        transform: translate( calc(-2.87vw - 7.93px), -4px);
         height: 4px;
     }
 }
